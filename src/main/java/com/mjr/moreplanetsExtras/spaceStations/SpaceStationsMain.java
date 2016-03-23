@@ -112,8 +112,8 @@ public class SpaceStationsMain {
 		
 		GalaxyRegistry.registerSatellite(venusSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitVenus.class, new TeleportTypeOrbit());
-		GalacticraftRegistry.registerProvider(-3001, WorldProviderOrbitVenus.class, false, 0);
-		GalacticraftRegistry.registerProvider(-3002, WorldProviderOrbitVenus.class, true, 0);
+		GalacticraftRegistry.registerProvider(-3003, WorldProviderOrbitVenus.class, false, 0);
+		GalacticraftRegistry.registerProvider(-3004, WorldProviderOrbitVenus.class, true, 0);
 
 		GalaxyRegistry.registerSatellite(plutoSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitPluto.class, new TeleportTypeOrbit());
@@ -130,7 +130,6 @@ public class SpaceStationsMain {
 		GalacticraftRegistry.registerProvider(-3011, WorldProviderOrbitFronos.class, false, 0);
 		GalacticraftRegistry.registerProvider(-3012, WorldProviderOrbitFronos.class, true, 0);
 		
-	
 		GalaxyRegistry.registerSatellite(nibiruSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitNibiru.class, new TeleportTypeOrbit());
 		GalacticraftRegistry.registerProvider(-3015, WorldProviderOrbitNibiru.class, false, 0);
@@ -161,12 +160,9 @@ public class SpaceStationsMain {
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3001, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3003, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3005, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3007, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.deimos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3009, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3011, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3013, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.koentus")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3015, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3017, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.phobos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3019, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3021, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(-3023, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
