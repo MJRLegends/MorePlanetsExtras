@@ -10,7 +10,6 @@ import micdoodle8.mods.galacticraft.api.galaxies.Satellite;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeOrbit;
-import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOrbit;
 import net.minecraft.init.Items;
 import net.minecraft.util.ResourceLocation;
 
@@ -18,12 +17,9 @@ public class SpaceStationsMain {
 	public static Satellite mercurySpaceStation;
 	public static Satellite venusSpaceStation;
 	public static Satellite plutoSpaceStation;
-	public static Satellite deimosSpaceStation;
 	public static Satellite dionaSpaceStation;
 	public static Satellite fronosSpaceStation;
-	public static Satellite koentusSpaceStation;
 	public static Satellite nibiruSpaceStation;
-	public static Satellite phobosSpaceStation;
 	public static Satellite polongniusSpaceStation;
 	public static Satellite siriusBSpaceStation;
 	public static Satellite kapteynBSpaceStation;
@@ -58,15 +54,7 @@ public class SpaceStationsMain {
 		plutoSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto")).getTierRequirement());
 		plutoSpaceStation.setDimensionInfo(-3005, -3006, WorldProviderOrbitPluto.class);
 		plutoSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
-		
-		deimosSpaceStation = new Satellite("spaceStation.deimos").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.deimos"));
-		deimosSpaceStation.setRelativeSize(0.2667F);
-		deimosSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
-		deimosSpaceStation.setRelativeOrbitTime(20.0F);
-		deimosSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.deimos")).getTierRequirement());
-		deimosSpaceStation.setDimensionInfo(-3007, -3008, WorldProviderOrbitDeimos.class);
-		deimosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
-		
+
 		dionaSpaceStation = new Satellite("spaceStation.diona").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona"));
 		dionaSpaceStation.setRelativeSize(0.2667F);
 		dionaSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
@@ -83,14 +71,6 @@ public class SpaceStationsMain {
 		fronosSpaceStation.setDimensionInfo(-3011, -3012, WorldProviderOrbitFronos.class);
 		fronosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		
-		koentusSpaceStation = new Satellite("spaceStation.koentus").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.koentus"));
-		koentusSpaceStation.setRelativeSize(0.2667F);
-		koentusSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
-		koentusSpaceStation.setRelativeOrbitTime(20.0F);
-		koentusSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.koentus")).getTierRequirement());
-		koentusSpaceStation.setDimensionInfo(-3013, -3014, WorldProviderOrbitKoentus.class);
-		koentusSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
-		
 		nibiruSpaceStation = new Satellite("spaceStation.nibiru").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru"));
 		nibiruSpaceStation.setRelativeSize(0.2667F);
 		nibiruSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
@@ -98,14 +78,6 @@ public class SpaceStationsMain {
 		nibiruSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getTierRequirement());
 		nibiruSpaceStation.setDimensionInfo(-3015, -3016, WorldProviderOrbitNibiru.class);
 		nibiruSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
-		
-		phobosSpaceStation = new Satellite("spaceStation.phobos").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.phobos"));
-		phobosSpaceStation.setRelativeSize(0.2667F);
-		phobosSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
-		phobosSpaceStation.setRelativeOrbitTime(20.0F);
-		phobosSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.phobos")).getTierRequirement());
-		phobosSpaceStation.setDimensionInfo(-3017, -3018, WorldProviderOrbitPhobos.class);
-		phobosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		
 		polongniusSpaceStation = new Satellite("spaceStation.polongnius").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius"));
 		polongniusSpaceStation.setRelativeSize(0.2667F);
@@ -148,11 +120,6 @@ public class SpaceStationsMain {
 		GalacticraftRegistry.registerProvider(-3005, WorldProviderOrbitPluto.class, false, 0);
 		GalacticraftRegistry.registerProvider(-3006, WorldProviderOrbitPluto.class, true, 0);
 		
-		GalaxyRegistry.registerSatellite(deimosSpaceStation);
-		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitDeimos.class, new TeleportTypeOrbit());
-		GalacticraftRegistry.registerProvider(-3007, WorldProviderOrbitDeimos.class, false, 0);
-		GalacticraftRegistry.registerProvider(-3008, WorldProviderOrbitDeimos.class, true, 0);
-		
 		GalaxyRegistry.registerSatellite(dionaSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitDiona.class, new TeleportTypeOrbit());
 		GalacticraftRegistry.registerProvider(-3009, WorldProviderOrbitDiona.class, false, 0);
@@ -163,21 +130,12 @@ public class SpaceStationsMain {
 		GalacticraftRegistry.registerProvider(-3011, WorldProviderOrbitFronos.class, false, 0);
 		GalacticraftRegistry.registerProvider(-3012, WorldProviderOrbitFronos.class, true, 0);
 		
-		GalaxyRegistry.registerSatellite(koentusSpaceStation);
-		GalacticraftRegistry.registerTeleportType(WorldProviderOrbit.class, new TeleportTypeOrbit());
-		GalacticraftRegistry.registerProvider(-3013, WorldProviderOrbitKoentus.class, false, 0);
-		GalacticraftRegistry.registerProvider(-3014, WorldProviderOrbit.class, true, 0);
-		
+	
 		GalaxyRegistry.registerSatellite(nibiruSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitNibiru.class, new TeleportTypeOrbit());
 		GalacticraftRegistry.registerProvider(-3015, WorldProviderOrbitNibiru.class, false, 0);
 		GalacticraftRegistry.registerProvider(-3016, WorldProviderOrbitNibiru.class, true, 0);
-		
-		GalaxyRegistry.registerSatellite(phobosSpaceStation);
-		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitPhobos.class, new TeleportTypeOrbit());
-		GalacticraftRegistry.registerProvider(-3017, WorldProviderOrbitPhobos.class, false, 0);
-		GalacticraftRegistry.registerProvider(-3018, WorldProviderOrbitPhobos.class, true, 0);
-		
+	
 		GalaxyRegistry.registerSatellite(polongniusSpaceStation);
 		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitPolongnius.class, new TeleportTypeOrbit());
 		GalacticraftRegistry.registerProvider(-3019, WorldProviderOrbitPolongnius.class, false, 0);
