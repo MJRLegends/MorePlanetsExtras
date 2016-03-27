@@ -27,6 +27,7 @@ public class MorePlanetsExtras {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		Config.load();
 		MorePlanetsExtras.proxy.preInit(event);
 	}
 
