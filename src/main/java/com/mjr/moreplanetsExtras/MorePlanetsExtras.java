@@ -3,9 +3,11 @@ package com.mjr.moreplanetsExtras;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import net.minecraft.entity.Entity;
 
+import com.mjr.moreplanetsExtras.handlers.TickHandlerClient;
 import com.mjr.moreplanetsExtras.proxy.CommonProxy;
 import com.mjr.moreplanetsExtras.spaceStations.SpaceStationsMain;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -28,6 +30,7 @@ public class MorePlanetsExtras {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.load();
+		FMLCommonHandler.instance().bus().register(new TickHandlerClient());
 		MorePlanetsExtras.proxy.preInit(event);
 	}
 
