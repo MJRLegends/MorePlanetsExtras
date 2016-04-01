@@ -24,7 +24,6 @@ public class MorePlanetsExtras {
 	public static CommonProxy proxy;
 
 	@Instance(Constants.modID)
-
 	public static MorePlanetsExtras instance;
 
 	@EventHandler
@@ -45,7 +44,6 @@ public class MorePlanetsExtras {
 		MorePlanetsExtras.proxy.postInit(event);
 	}
 
-	
 	public static void registerMorePlanetsExtrasNonMobEntity(Class<? extends Entity> var0, String var1, int trackingDistance, int updateFreq, boolean sendVel) {
 		EntityRegistry.registerModEntity(var0, var1, GCCoreUtil.nextInternalID(), MorePlanetsExtras.instance, trackingDistance, updateFreq, sendVel);
 	}
