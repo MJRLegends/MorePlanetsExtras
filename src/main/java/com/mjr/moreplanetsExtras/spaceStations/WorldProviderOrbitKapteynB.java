@@ -7,10 +7,7 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.SkyProviderOrbit;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import micdoodle8.mods.galacticraft.core.world.gen.ChunkProviderOrbit;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.biome.WorldChunkManager;
-import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -60,18 +57,6 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit{
 	public boolean shouldForceRespawn()
 	{
 		return true;
-	}
-
-	@Override
-	public Class<? extends IChunkProvider> getChunkProviderClass()
-	{
-		return ChunkProviderOrbit.class;
-	}
-
-	@Override
-	public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
-	{
-		return null;
 	}
 
 	@Override
@@ -211,6 +196,7 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit{
 	 * 0.031415 would be 1/200 revolution per tick So that would be 1 revolution
 	 * every 10 seconds
 	 */
+	@Override
 	public void setSpinRate(float angle)
 	{
 		this.angularVelocityRadians = angle;
@@ -232,6 +218,7 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit{
 		}
 	}
 
+	@Override
 	public void setSpinRate(float angle, boolean firing)
 	{
 		this.angularVelocityRadians = angle;
