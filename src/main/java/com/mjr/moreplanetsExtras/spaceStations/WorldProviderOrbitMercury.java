@@ -176,7 +176,7 @@ public class WorldProviderOrbitMercury extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury")).getTierRequirement();
 	}
 
 	@Override

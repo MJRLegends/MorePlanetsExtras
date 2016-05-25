@@ -176,7 +176,7 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB")).getTierRequirement();
 	}
 
 	@Override

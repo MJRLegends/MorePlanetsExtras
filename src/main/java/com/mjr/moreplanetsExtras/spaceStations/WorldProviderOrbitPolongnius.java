@@ -176,7 +176,7 @@ public class WorldProviderOrbitPolongnius extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius")).getTierRequirement();
 	}
 
 	@Override

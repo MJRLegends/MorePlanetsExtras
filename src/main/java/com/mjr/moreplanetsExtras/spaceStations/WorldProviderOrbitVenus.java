@@ -176,7 +176,7 @@ public class WorldProviderOrbitVenus extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus")).getTierRequirement();
 	}
 
 	@Override

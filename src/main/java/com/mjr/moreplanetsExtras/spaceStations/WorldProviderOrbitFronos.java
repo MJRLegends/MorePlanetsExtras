@@ -176,7 +176,7 @@ public class WorldProviderOrbitFronos extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos")).getTierRequirement();
 	}
 
 	@Override

@@ -176,7 +176,7 @@ public class WorldProviderOrbitSiriusB extends WorldProviderOrbit{
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB")).getTierRequirement();
 	}
 
 	@Override
