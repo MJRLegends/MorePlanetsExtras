@@ -14,8 +14,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderOrbitPluto extends WorldProviderOrbit{
-	private float angularVelocityRadians = 0F;
-	private float skyAngularVelocity = (float) (this.angularVelocityRadians * 180 / Math.PI);
 
 	@Override
 	public CelestialBody getCelestialBody()
@@ -190,47 +188,7 @@ public class WorldProviderOrbitPluto extends WorldProviderOrbit{
 	{
 		return 50.0F;
 	}
-
-	/**
-	 * Sets the spin rate for the dimension in radians per tick For example,
-	 * 0.031415 would be 1/200 revolution per tick So that would be 1 revolution
-	 * every 10 seconds
-	 */
-	@Override
-	public void setSpinRate(float angle)
-	{
-		this.angularVelocityRadians = angle;
-		this.skyAngularVelocity = angle * 180F / 3.1415927F;
-
-		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
-		{
-			this.updateSkyProviderSpinRate();
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	private void updateSkyProviderSpinRate()
-	{
-		IRenderHandler sky = this.getSkyRenderer();
-		if (sky instanceof SkyProviderOrbit)
-		{
-			((SkyProviderOrbit) sky).spinDeltaPerTick = this.skyAngularVelocity;
-		}
-	}
-
-	@Override
-	public void setSpinRate(float angle, boolean firing)
-	{
-		this.angularVelocityRadians = angle;
-		this.skyAngularVelocity = angle * 180F / 3.1415927F;
-		IRenderHandler sky = this.getSkyRenderer();
-		if (sky instanceof SkyProviderOrbit)
-		{
-			((SkyProviderOrbit) sky).spinDeltaPerTick = this.skyAngularVelocity;
-		}
-		this.thrustersFiring = firing;
-	}
-
+	
 	@Override
 	public float getThermalLevelModifier()
 	{
