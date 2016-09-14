@@ -14,7 +14,7 @@ public class GalacticraftConfigAccess
 			setup();
 		
 		try {
-			return (boolean) quickMode.getBoolean(null);
+			return quickMode.getBoolean(null);
 		} catch (Exception e) { }
 		return false;
 	}
@@ -25,7 +25,7 @@ public class GalacticraftConfigAccess
 			setup();
 		
 		try {
-			return (boolean) hardMode.getBoolean(null);
+			return hardMode.getBoolean(null);
 		} catch (Exception e) { }
 		return false;
 	}
@@ -36,7 +36,7 @@ public class GalacticraftConfigAccess
 			setup();
 		
 		try {
-			return (boolean) adventureMode.getBoolean(null);
+			return adventureMode.getBoolean(null);
 		} catch (Exception e) { }
 		return false;
 	}
