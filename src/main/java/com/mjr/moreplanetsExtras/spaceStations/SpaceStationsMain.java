@@ -34,8 +34,7 @@ public class SpaceStationsMain {
 
 	private static void initializeSatellites() {
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury") != null && Config.mercurySpaceStation) {
-			mercurySpaceStation = new Satellite("spaceStation.mercury").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.mercury"));
+			mercurySpaceStation = new Satellite("spaceStation.mercury").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury"));
 			mercurySpaceStation.setRelativeSize(0.2667F);
 			mercurySpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			mercurySpaceStation.setRelativeOrbitTime(20.0F);
