@@ -105,7 +105,7 @@ public class TickHandlerClient {
 					}
 				} else if (world.provider instanceof WorldProviderOrbitSiriusB) {
 					if (world.provider.getSkyRenderer() == null) {
-						world.provider.setSkyRenderer(new SkyProviderOrbitCustom(new ResourceLocation("siriusb:textures/gui/celestialbodies/siriusb.png"), new ResourceLocation("mpcore:textures/gui/celestialbodies/sirius_celestial.png")));
+						world.provider.setSkyRenderer(new SkyProviderOrbitCustom(new ResourceLocation("siriusb:textures/gui/celestialbodies/sirius_b.png"), new ResourceLocation("mpcore:textures/gui/celestialbodies/sirius_celestial.png")));
 						((SkyProviderOrbitCustom) world.provider.getSkyRenderer()).spinDeltaPerTick = ((WorldProviderOrbitSiriusB) world.provider).getSpinRate();
 						GCPlayerStatsClient.get(player).inFreefallFirstCheck = false;
 					}
@@ -115,7 +115,7 @@ public class TickHandlerClient {
 					}
 				} else if (world.provider instanceof WorldProviderOrbitKapteynB) {
 					if (world.provider.getSkyRenderer() == null) {
-						world.provider.setSkyRenderer(new SkyProviderOrbitCustom(new ResourceLocation("kapteynb:textures/gui/celestialbodies/kapteynb.png"), new ResourceLocation("kapteynb:textures/gui/celestialbodies/kapteyn_star.png")));
+						world.provider.setSkyRenderer(new SkyProviderOrbitCustom(new ResourceLocation("kapteynb:textures/gui/celestialbodies/kapteyn_b.png"), new ResourceLocation("kapteynb:textures/gui/celestialbodies/kapteyn_star.png")));
 						((SkyProviderOrbitCustom) world.provider.getSkyRenderer()).spinDeltaPerTick = ((WorldProviderOrbitKapteynB) world.provider).getSpinRate();
 						GCPlayerStatsClient.get(player).inFreefallFirstCheck = false;
 					}
