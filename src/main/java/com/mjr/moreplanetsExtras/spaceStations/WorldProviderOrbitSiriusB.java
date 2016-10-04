@@ -1,5 +1,7 @@
 package com.mjr.moreplanetsExtras.spaceStations;
 
+import com.mjr.moreplanetsExtras.SkyProviderOrbitCustom;
+
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
@@ -7,10 +9,15 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.util.MathHelper;
+import net.minecraftforge.client.IRenderHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderOrbitSiriusB extends WorldProviderOrbit{
+
+	private float angularVelocityRadians = 0.0F;
+	private float skyAngularVelocity = (float) (this.angularVelocityRadians * 180.0F / 3.141592653589793D);
 
 	@Override
 	public CelestialBody getCelestialBody()
@@ -196,5 +203,33 @@ public class WorldProviderOrbitSiriusB extends WorldProviderOrbit{
 	public float getWindLevel()
 	{
 		return 0.1F;
+	}
+	
+	public void setSpinRate(float angle) {
+		super.setSpinRate(angle);
+		this.angularVelocityRadians = angle;
+		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
+		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
+			updateSkyProviderSpinRate();
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	private void updateSkyProviderSpinRate() {
+		IRenderHandler sky = getSkyRenderer();
+		if ((sky instanceof SkyProviderOrbitCustom)) {
+			((SkyProviderOrbitCustom) sky).spinDeltaPerTick = this.skyAngularVelocity;
+		}
+	}
+
+	public void setSpinRate(float angle, boolean firing) {
+		super.setSpinRate(angle, firing);
+		this.angularVelocityRadians = angle;
+		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
+		IRenderHandler sky = getSkyRenderer();
+		if ((sky instanceof SkyProviderOrbitCustom)) {
+			((SkyProviderOrbitCustom) sky).spinDeltaPerTick = this.skyAngularVelocity;
+		}
+		this.thrustersFiring = firing;
 	}
 }
