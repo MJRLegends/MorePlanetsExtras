@@ -7,3 +7,5 @@ gradlew
 gradlew.bat
 *.jar
 *.exe
+.classpath
+.project
