@@ -2,8 +2,6 @@ package com.mjr.moreplanetsExtras.spaceStations;
 
 import java.util.HashMap;
 
-import com.mjr.moreplanetsExtras.Config;
-
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
@@ -12,8 +10,12 @@ import micdoodle8.mods.galacticraft.api.galaxies.Satellite;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeOrbit;
-import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
+import com.mjr.moreplanetsExtras.Config;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class SpaceStationsMain {
 	public static Satellite mercurySpaceStation;
@@ -70,8 +72,7 @@ public class SpaceStationsMain {
 			dionaSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos") != null && Config.fronosSpaceStation) {
-			fronosSpaceStation = new Satellite("spaceStation.fronos").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.fronos"));
+			fronosSpaceStation = new Satellite("spaceStation.fronos").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos"));
 			fronosSpaceStation.setRelativeSize(0.2667F);
 			fronosSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			fronosSpaceStation.setRelativeOrbitTime(20.0F);
@@ -80,8 +81,7 @@ public class SpaceStationsMain {
 			fronosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && Config.nibiruSpaceStation) {
-			nibiruSpaceStation = new Satellite("spaceStation.nibiru").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.nibiru"));
+			nibiruSpaceStation = new Satellite("spaceStation.nibiru").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru"));
 			nibiruSpaceStation.setRelativeSize(0.2667F);
 			nibiruSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			nibiruSpaceStation.setRelativeOrbitTime(20.0F);
@@ -90,8 +90,7 @@ public class SpaceStationsMain {
 			nibiruSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius") != null && Config.polongniusSpaceStation) {
-			polongniusSpaceStation = new Satellite("spaceStation.polongnius").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.polongnius"));
+			polongniusSpaceStation = new Satellite("spaceStation.polongnius").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius"));
 			polongniusSpaceStation.setRelativeSize(0.2667F);
 			polongniusSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			polongniusSpaceStation.setRelativeOrbitTime(20.0F);
@@ -100,8 +99,7 @@ public class SpaceStationsMain {
 			polongniusSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB") != null && Config.siriusBSpaceStation) {
-			siriusBSpaceStation = new Satellite("spaceStation.siriusB").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.siriusB"));
+			siriusBSpaceStation = new Satellite("spaceStation.siriusB").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB"));
 			siriusBSpaceStation.setRelativeSize(0.2667F);
 			siriusBSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			siriusBSpaceStation.setRelativeOrbitTime(20.0F);
@@ -110,8 +108,7 @@ public class SpaceStationsMain {
 			siriusBSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB") != null && Config.kapteynBSpaceStation) {
-			kapteynBSpaceStation = new Satellite("spaceStation.kapteynB").setParentBody((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.kapteynB"));
+			kapteynBSpaceStation = new Satellite("spaceStation.kapteynB").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB"));
 			kapteynBSpaceStation.setRelativeSize(0.2667F);
 			kapteynBSpaceStation.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(5.5F, 5.5F));
 			kapteynBSpaceStation.setRelativeOrbitTime(20.0F);
@@ -179,38 +176,61 @@ public class SpaceStationsMain {
 	}
 
 	private static void registerSatellitesRecipes() {
-		final HashMap<Object, Integer> inputMap = new HashMap<Object, Integer>();
-		inputMap.put("ingotTin", 32);
-		inputMap.put("waferAdvanced", 1);
-		inputMap.put(Items.iron_ingot, 24);
-
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury") != null && mercurySpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.mercurySpaceStationID, ((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.mercury")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus") != null && venusSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.venusSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus"))
-					.getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto") != null && plutoSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.plutoSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto"))
-					.getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona") != null && dionaSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.dionaSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona"))
-					.getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos") != null && fronosSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.fronosSpaceStationID,
-					((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && nibiruSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.nibiruSpaceStationID,
-					((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius") != null && polongniusSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.polongniusSpaceStationID, ((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.polongnius")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB") != null && siriusBSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.siriusBSpaceStationID, ((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.siriusB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB") != null && kapteynBSpaceStation != null)
-			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.kapteynBSpaceStationID, ((Planet) GalaxyRegistry
-					.getCelestialBodyFromUnlocalizedName("planet.kapteynB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
-
+		HashMap<Object, Integer> inputMap = new HashMap<Object, Integer>();
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury") != null && mercurySpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "mercury_item"), 1, 2), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "mercury_item"), 1, 3), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "mercury_item"), 1, 0), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.mercurySpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.mercury")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus") != null && venusSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "venus_item"), 1, 0), 64);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.venusSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.venus")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto") != null && plutoSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "pluto_item"), 1, 0), 64);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.plutoSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.pluto")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona") != null && dionaSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "diona_item"), 1, 0), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "diona_item"), 1, 1), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.dionaSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos") != null && fronosSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "fronos_item"), 1, 2), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "fronos_item"), 1, 3), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.fronosSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.fronos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && nibiruSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "nibiru_item"), 1, 1), 64);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.nibiruSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius") != null && polongniusSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "polongnius_item"), 1, 0), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "polongnius_item"), 1, 3), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "polongnius_item"), 1, 5), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.polongniusSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.polongnius")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB") != null && siriusBSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "sirius-b_item"), 1, 1), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "sirius-b_item"), 1, 2), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "sirius-b_item"), 1, 3), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.siriusBSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.siriusB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB") != null && kapteynBSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "kapteyn-b_item"), 1, 0), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "kapteyn-b_item"), 1, 1), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanet", "kapteyn-b_item"), 1, 5), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.kapteynBSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.kapteynB")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
 	};
 }
