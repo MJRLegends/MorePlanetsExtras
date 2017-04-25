@@ -175,7 +175,7 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit {
 	}
 
 	public void setSpinRate(float angle) {
-		super.setSpinRate(angle);
+		super.getSpinManager().setSpinRate(angle);
 		this.angularVelocityRadians = angle;
 		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
 		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
@@ -192,13 +192,13 @@ public class WorldProviderOrbitKapteynB extends WorldProviderOrbit {
 	}
 
 	public void setSpinRate(float angle, boolean firing) {
-		super.setSpinRate(angle, firing);
+		super.getSpinManager().setSpinRate(angle, firing);
 		this.angularVelocityRadians = angle;
 		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
 		IRenderHandler sky = getSkyRenderer();
 		if ((sky instanceof SkyProviderOrbitCustom)) {
 			((SkyProviderOrbitCustom) sky).spinDeltaPerTick = this.skyAngularVelocity;
 		}
-		this.thrustersFiring = firing;
+		this.getSpinManager().thrustersFiring = firing;
 	}
 }
