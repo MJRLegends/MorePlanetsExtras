@@ -7,11 +7,9 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.util.MathHelper;
-import net.minecraftforge.client.IRenderHandler;
 
 import com.mjr.moreplanetsExtras.SkyProviderOrbitCustom;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -174,31 +172,11 @@ public class WorldProviderOrbitMercury extends WorldProviderOrbit {
 		return 0.1F;
 	}
 
-	public void setSpinRate(float angle) {
-		super.getSpinManager().setSpinRate(angle);
-		this.angularVelocityRadians = angle;
-		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
-		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
-			updateSkyProviderSpinRate();
-		}
-	}
-
+	@Override
 	@SideOnly(Side.CLIENT)
-	private void updateSkyProviderSpinRate() {
-		IRenderHandler sky = getSkyRenderer();
-		if ((sky instanceof SkyProviderOrbitCustom)) {
-			((SkyProviderOrbitCustom) sky).spinDeltaPerTick = this.skyAngularVelocity;
-		}
-	}
-
-	public void setSpinRate(float angle, boolean firing) {
-		super.getSpinManager().setSpinRate(angle, firing);
-		this.angularVelocityRadians = angle;
-		this.skyAngularVelocity = (angle * 180.0F / 3.1415927F);
-		IRenderHandler sky = getSkyRenderer();
-		if ((sky instanceof SkyProviderOrbitCustom)) {
-			((SkyProviderOrbitCustom) sky).spinDeltaPerTick = this.skyAngularVelocity;
-		}
-		this.getSpinManager().thrustersFiring = firing;
+	public void setSpinDeltaPerTick(float angle) {
+		SkyProviderOrbitCustom skyProvider = ((SkyProviderOrbitCustom) this.getSkyRenderer());
+		if (skyProvider != null)
+			skyProvider.spinDeltaPerTick = angle;
 	}
 }
