@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.mjr.moreplanetsextras.Dimensions;
 
-public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
+public class WorldProviderOrbitNibiru extends WorldProviderOverworldOrbit {
 
 	@Override
 	public CelestialBody getCelestialBody() {
-		return SpaceStationsMain.dionaSpaceStation;
+		return SpaceStationsMain.nibiruSpaceStation;
 	}
 
 	@Override
@@ -128,7 +128,7 @@ public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.diona";
+		return "planet.nibiru";
 	}
 
 	@Override
@@ -138,7 +138,7 @@ public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 
 	@Override
 	public String getSaveFolder() {
-		return "DIM_SPACESTATION_Diona_" + this.getDimension();
+		return "DIM_SPACESTATION_Nibiru_" + this.getDimension();
 	}
 
 	@Override
@@ -153,7 +153,7 @@ public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getTierRequirement();
+		return tier >= ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getTierRequirement();
 	}
 
 	@Override
@@ -178,6 +178,6 @@ public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 
 	@Override
 	public DimensionType getDimensionType() {
-		return Dimensions.DIONA_ORBIT;
+		return Dimensions.NIBIRU_ORBIT;
 	}
 }

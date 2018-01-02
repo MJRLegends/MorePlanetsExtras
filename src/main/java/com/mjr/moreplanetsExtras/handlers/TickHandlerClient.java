@@ -1,4 +1,4 @@
-package com.mjr.moreplanetsExtras.handlers;
+package com.mjr.moreplanetsextras.handlers;
 
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import micdoodle8.mods.galacticraft.core.client.SkyProviderOrbit;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 
-import com.mjr.moreplanetsExtras.spaceStations.WorldProviderOrbitDiona;
+import com.mjr.moreplanetsextras.spaceStations.WorldProviderOrbitDiona;
 
 public class TickHandlerClient {
 	@SubscribeEvent

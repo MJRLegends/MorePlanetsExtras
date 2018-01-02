@@ -1,4 +1,4 @@
-package com.mjr.moreplanetsExtras;
+package com.mjr.moreplanetsextras;
 
 public class Constants {
 	public static final String modID = "moreplanetsextras";

@@ -1,11 +1,11 @@
-package com.mjr.moreplanetsExtras.proxy;
+package com.mjr.moreplanetsextras.proxy;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import com.mjr.moreplanetsExtras.handlers.TickHandlerClient;
+import com.mjr.moreplanetsextras.handlers.TickHandlerClient;
 
 public class ClientProxy extends CommonProxy {
 	@Override

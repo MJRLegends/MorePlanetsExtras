@@ -1,4 +1,4 @@
-package com.mjr.moreplanetsExtras;
+package com.mjr.moreplanetsextras;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,13 +8,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import com.mjr.moreplanetsExtras.proxy.CommonProxy;
-import com.mjr.moreplanetsExtras.spaceStations.SpaceStationsMain;
+import com.mjr.moreplanetsextras.proxy.CommonProxy;
+import com.mjr.moreplanetsextras.spaceStations.SpaceStationsMain;
 
 @Mod(modid = Constants.modID, name = Constants.modName, version = Constants.modVersion, dependencies = "required-after:galacticraftcore;required-after:galacticraftplanets;required-after:moreplanets;")
 public class MorePlanetsExtras {
 
-	@SidedProxy(clientSide = "com.mjr.moreplanetsExtras.proxy.ClientProxy", serverSide = "com.mjr.moreplanetsExtras.proxy.CommonProxy")
+	@SidedProxy(clientSide = "com.mjr.moreplanetsextras.proxy.ClientProxy", serverSide = "com.mjr.moreplanetsextras.proxy.CommonProxy")
 	public static CommonProxy proxy;
 
 	@Instance(Constants.modID)
