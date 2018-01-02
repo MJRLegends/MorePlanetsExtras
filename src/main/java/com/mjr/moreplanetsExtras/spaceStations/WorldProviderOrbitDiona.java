@@ -4,19 +4,18 @@ import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
-import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOrbit;
+import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOverworldOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import net.minecraft.util.MathHelper;
+import micdoodle8.mods.galacticraft.core.world.gen.ChunkProviderOrbit;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.mjr.moreplanetsExtras.SkyProviderOrbitCustom;
+import com.mjr.moreplanetsExtras.Dimensions;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-public class WorldProviderOrbitDiona extends WorldProviderOrbit {
-
-	private float angularVelocityRadians = 0.0F;
-	private float skyAngularVelocity = (float) (this.angularVelocityRadians * 180.0F / 3.141592653589793D);
+public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 
 	@Override
 	public CelestialBody getCelestialBody() {
@@ -51,6 +50,11 @@ public class WorldProviderOrbitDiona extends WorldProviderOrbit {
 	@Override
 	public boolean shouldForceRespawn() {
 		return true;
+	}
+
+	@Override
+	public Class<? extends IChunkGenerator> getChunkProviderClass() {
+		return ChunkProviderOrbit.class;
 	}
 
 	@Override
@@ -134,7 +138,7 @@ public class WorldProviderOrbitDiona extends WorldProviderOrbit {
 
 	@Override
 	public String getSaveFolder() {
-		return "DIM_SPACESTATION_Diona_" + this.spaceStationDimensionID;
+		return "DIM_SPACESTATION_Diona_" + this.getDimension();
 	}
 
 	@Override
@@ -173,10 +177,7 @@ public class WorldProviderOrbitDiona extends WorldProviderOrbit {
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void setSpinDeltaPerTick(float angle) {
-		SkyProviderOrbitCustom skyProvider = ((SkyProviderOrbitCustom) this.getSkyRenderer());
-		if (skyProvider != null)
-			skyProvider.spinDeltaPerTick = angle;
+	public DimensionType getDimensionType() {
+		return Dimensions.DIONA_ORBIT;
 	}
 }

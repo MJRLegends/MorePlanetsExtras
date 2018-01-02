@@ -1,17 +1,17 @@
 package com.mjr.moreplanetsExtras.proxy;
 
-import com.mjr.moreplanetsExtras.handlers.TickHandlerClient;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import com.mjr.moreplanetsExtras.handlers.TickHandlerClient;
 
 public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		FMLCommonHandler.instance().bus().register(new TickHandlerClient());
+		MinecraftForge.EVENT_BUS.register(new TickHandlerClient());
 	}
 
 	@Override
