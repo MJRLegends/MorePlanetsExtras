@@ -85,7 +85,21 @@ public class SpaceStationsMain {
 			inputMap = new HashMap<Object, Integer>();
 			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "diona_item"), 1, 0), 32);
 			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "diona_item"), 1, 1), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "diona_item"), 1, 4), 32);
 			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.dionaSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos") != null && chalosSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "chalos_item"), 1, 0), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "chalos_item"), 1, 1), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.chalosSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
+		}
+		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && nibiruSpaceStation != null) {
+			inputMap = new HashMap<Object, Integer>();
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "nibiru_item"), 1, 0), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "nibiru_item"), 1, 1), 32);
+			inputMap.put(new ItemStack(GameRegistry.findItem("MorePlanets", "nibiru_item"), 1, 2), 32);
+			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.nibiruSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		}
 	};
 }
