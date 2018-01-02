@@ -20,8 +20,8 @@ public class TickHandlerClient {
 	@SubscribeEvent
 	public void onClientTick(ClientTickEvent event) {
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
-		final WorldClient world = minecraft.theWorld;
-		final EntityPlayerSP player = minecraft.thePlayer;
+		final WorldClient world = minecraft.world;
+		final EntityPlayerSP player = minecraft.player;
 
 		if (event.phase == Phase.START) {
 			if (world != null) {
