@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import com.mjr.moreplanetsextras.proxy.CommonProxy;
 import com.mjr.moreplanetsextras.spaceStations.SpaceStationsMain;
 
-@Mod(modid = Constants.modID, name = Constants.modName, version = Constants.modVersion, dependencies = "required-after:galacticraftcore;required-after:galacticraftplanets;required-after:moreplanets;")
+@Mod(modid = Constants.modID, name = Constants.modName, version = Constants.modVersion, dependencies = "required-after:galacticraftcore;required-after:galacticraftplanets;required-after:moreplanets;", acceptedMinecraftVersions="[1.10.2]")
 public class MorePlanetsExtras {
 
 	@SidedProxy(clientSide = "com.mjr.moreplanetsextras.proxy.ClientProxy", serverSide = "com.mjr.moreplanetsextras.proxy.CommonProxy")
