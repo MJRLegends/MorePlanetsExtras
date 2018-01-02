@@ -6,14 +6,9 @@ import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOverworldOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import micdoodle8.mods.galacticraft.core.world.gen.ChunkProviderOrbit;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.DimensionType;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.util.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.mjr.moreplanetsextras.Dimensions;
 
 public class WorldProviderOrbitChalos extends WorldProviderOverworldOrbit {
 
@@ -50,11 +45,6 @@ public class WorldProviderOrbitChalos extends WorldProviderOverworldOrbit {
 	@Override
 	public boolean shouldForceRespawn() {
 		return true;
-	}
-
-	@Override
-	public Class<? extends IChunkGenerator> getChunkProviderClass() {
-		return ChunkProviderOrbit.class;
 	}
 
 	@Override
@@ -138,7 +128,7 @@ public class WorldProviderOrbitChalos extends WorldProviderOverworldOrbit {
 
 	@Override
 	public String getSaveFolder() {
-		return "DIM_SPACESTATION_Chalos_" + this.getDimension();
+		return "DIM_SPACESTATION_Chalos_" + this.getDimensionId();
 	}
 
 	@Override
@@ -174,10 +164,5 @@ public class WorldProviderOrbitChalos extends WorldProviderOverworldOrbit {
 	@Override
 	public float getWindLevel() {
 		return 0.1F;
-	}
-
-	@Override
-	public DimensionType getDimensionType() {
-		return Dimensions.CHALOS_ORBIT;
 	}
 }

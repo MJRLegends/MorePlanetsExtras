@@ -4,7 +4,7 @@ buildscript {
         maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
 
@@ -15,18 +15,18 @@ group= "com.mjr.moreplanetsextras" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "MorePlanetsExtras"
 
 minecraft {
-    version = "1.10.2-12.18.3.2511"
+    version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
-	mappings = "snapshot_20161111"
+	mappings = "stable_20"
 	makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
 dependencies {
 	compile files (
-		"Galacticraft-API-1.10.2-4.0.0.119.jar",
-		"GalacticraftCore-Dev-1.10.2-4.0.0.119.jar",
-		"Galacticraft-Planets-Dev-1.10.2-4.0.0.119.jar",
-		"MicdoodleCore-Dev-1.10.2-4.0.0.119.jar"
+		"Galacticraft-API-1.8.9-4.0.0.119.jar",
+		"GalacticraftCore-Dev-1.8.9-4.0.0.119.jar",
+		"Galacticraft-Planets-Dev-1.8.9-4.0.0.119.jar",
+		"MicdoodleCore-Dev-1.8.9-4.0.0.119.jar"
 	)
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..

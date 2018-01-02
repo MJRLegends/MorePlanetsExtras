@@ -61,24 +61,23 @@ public class SpaceStationsMain {
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona") != null && Config.dionaSpaceStation) {
 			GalaxyRegistry.registerSatellite(dionaSpaceStation);
 			GalacticraftRegistry.registerTeleportType(WorldProviderOrbitDiona.class, new TeleportTypeOrbit());
-			GalacticraftRegistry.registerDimension("Diona Space Station", "_diona_orbit", Config.dionaSpaceStationID, WorldProviderOrbitDiona.class, false);
-			GalacticraftRegistry.registerDimension("Diona Space Station", "_diona_orbit", Config.dionaSpaceStationStaticID, WorldProviderOrbitDiona.class, true);
+			GalacticraftRegistry.registerProvider(Config.dionaSpaceStationID, WorldProviderOrbitDiona.class, false, 0);
+			GalacticraftRegistry.registerProvider(Config.dionaSpaceStationStaticID, WorldProviderOrbitDiona.class, true, 0);
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos") != null && Config.chalosSpaceStation) {
 			GalaxyRegistry.registerSatellite(chalosSpaceStation);
 			GalacticraftRegistry.registerTeleportType(WorldProviderOrbitChalos.class, new TeleportTypeOrbit());
-			GalacticraftRegistry.registerDimension("Chalos Space Station", "_chalos_orbit", Config.chalosSpaceStationID, WorldProviderOrbitChalos.class, false);
-			GalacticraftRegistry.registerDimension("Chalos Space Station", "_chalos_orbit", Config.chalosSpaceStationStaticID, WorldProviderOrbitChalos.class, true);
+			GalacticraftRegistry.registerProvider(Config.chalosSpaceStationID, WorldProviderOrbitChalos.class, false, 0);
+			GalacticraftRegistry.registerProvider(Config.chalosSpaceStationStaticID, WorldProviderOrbitChalos.class, true, 0);
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && Config.nibiruSpaceStation) {
 			GalaxyRegistry.registerSatellite(nibiruSpaceStation);
 			GalacticraftRegistry.registerTeleportType(WorldProviderOrbitNibiru.class, new TeleportTypeOrbit());
-			GalacticraftRegistry.registerDimension("Nibiru Space Station", "_nibiru_orbit", Config.nibiruSpaceStationID, WorldProviderOrbitNibiru.class, false);
-			GalacticraftRegistry.registerDimension("Nibiru Space Station", "_nibiru_orbit", Config.nibiruSpaceStationStaticID, WorldProviderOrbitNibiru.class, true);
+			GalacticraftRegistry.registerProvider(Config.nibiruSpaceStationID, WorldProviderOrbitNibiru.class, false, 0);
+			GalacticraftRegistry.registerProvider(Config.nibiruSpaceStationStaticID, WorldProviderOrbitNibiru.class, true, 0);
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	private static void registerSatellitesRecipes() {
 		HashMap<Object, Integer> inputMap = new HashMap<Object, Integer>();
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona") != null && dionaSpaceStation != null) {
