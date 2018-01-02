@@ -35,7 +35,7 @@ public class SpaceStationsMain {
 			dionaSpaceStation.setRelativeOrbitTime(20.0F);
 			dionaSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getTierRequirement());
 			dionaSpaceStation.setDimensionInfo(Config.dionaSpaceStationID, Config.dionaSpaceStationStaticID, WorldProviderOrbitDiona.class);
-			dionaSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
+			dionaSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/space_station.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos") != null && Config.chalosSpaceStation) {
 			chalosSpaceStation = new Satellite("spaceStation.chalos").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos"));
@@ -44,7 +44,7 @@ public class SpaceStationsMain {
 			chalosSpaceStation.setRelativeOrbitTime(20.0F);
 			chalosSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos")).getTierRequirement());
 			chalosSpaceStation.setDimensionInfo(Config.chalosSpaceStationID, Config.chalosSpaceStationStaticID, WorldProviderOrbitChalos.class);
-			chalosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
+			chalosSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/space_station.png"));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && Config.nibiruSpaceStation) {
 			nibiruSpaceStation = new Satellite("spaceStation.nibiru").setParentBody((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru"));
@@ -53,7 +53,7 @@ public class SpaceStationsMain {
 			nibiruSpaceStation.setRelativeOrbitTime(20.0F);
 			nibiruSpaceStation.setTierRequired(((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getTierRequirement());
 			nibiruSpaceStation.setDimensionInfo(Config.nibiruSpaceStationID, Config.nibiruSpaceStationStaticID, WorldProviderOrbitNibiru.class);
-			nibiruSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/spaceStation.png"));
+			nibiruSpaceStation.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/space_station.png"));
 		}
 	}
 
