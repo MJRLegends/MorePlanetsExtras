@@ -14,10 +14,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderOrbitNibiru extends WorldProviderOrbit {
-
-	private float angularVelocityRadians = 0.0F;
-	private float skyAngularVelocity = (float) (this.angularVelocityRadians * 180.0F / 3.141592653589793D);
-
 	@Override
 	public CelestialBody getCelestialBody() {
 		return SpaceStationsMain.nibiruSpaceStation;
