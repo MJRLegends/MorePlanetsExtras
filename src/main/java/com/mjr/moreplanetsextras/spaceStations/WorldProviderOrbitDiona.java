@@ -50,7 +50,6 @@ public class WorldProviderOrbitDiona extends WorldProviderOverworldOrbit {
 	@Override
 	public boolean isDaytime() {
 		final float a = this.worldObj.getCelestialAngle(0F);
-		// TODO: adjust this according to size of planet below
 		return a < 0.42F || a > 0.58F;
 	}
 
