@@ -12,7 +12,7 @@ import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeOrbit;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameData;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import com.mjr.moreplanetsextras.Config;
 
@@ -83,22 +83,22 @@ public class SpaceStationsMain {
 		HashMap<Object, Integer> inputMap = new HashMap<Object, Integer>();
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona") != null && dionaSpaceStation != null) {
 			inputMap = new HashMap<Object, Integer>();
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "diona_item")), 1, 0), 32);
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "diona_item")), 1, 1), 32);
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "diona_item")), 1, 4), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "diona_item")), 1, 0), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "diona_item")), 1, 1), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "diona_item")), 1, 4), 32);
 			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.dionaSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.diona")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos") != null && chalosSpaceStation != null) {
 			inputMap = new HashMap<Object, Integer>();
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "chalos_item")), 1, 0), 32);
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "chalos_item")), 1, 1), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "chalos_item")), 1, 0), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "chalos_item")), 1, 1), 32);
 			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.chalosSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.chalos")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		}
 		if (GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru") != null && nibiruSpaceStation != null) {
 			inputMap = new HashMap<Object, Integer>();
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "nibiru_item")), 1, 0), 32);
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "nibiru_item")), 1, 1), 32);
-			inputMap.put(new ItemStack(GameData.getItemRegistry().getObject(new ResourceLocation("moreplanets", "nibiru_item")), 1, 2), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "nibiru_item")), 1, 0), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "nibiru_item")), 1, 1), 32);
+			inputMap.put(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("moreplanets", "nibiru_item")), 1, 2), 32);
 			GalacticraftRegistry.registerSpaceStation(new SpaceStationType(Config.nibiruSpaceStationID, ((Planet) GalaxyRegistry.getCelestialBodyFromUnlocalizedName("planet.nibiru")).getDimensionID(), new SpaceStationRecipe(inputMap)));
 		}
 	};
