@@ -1,3 +1,5 @@
+[![](http://cf.way2muchnoise.eu/full_more-planet-extras_downloads.svg)](https://minecraft.curseforge.com/projects/more-planet-extras) [![](http://cf.way2muchnoise.eu/versions/Minecraft_more-planet-extras_all.svg)](https://minecraft.curseforge.com/projects/more-planet-extras)
+
 # MorePlanetsExtras
 A Galacticraft addon made to add extras to More Planets Addon. This addon isnt part of More Planets and fully credit goes to SteveKunG for the More Planets Addon! 
 
