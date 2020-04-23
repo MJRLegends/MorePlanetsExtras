@@ -1,3 +1,5 @@
+def version_galacticraft="1.12.2-4.0.2.255"
+
 buildscript {
     repositories {
         jcenter()
@@ -15,7 +17,7 @@ group= "com.mjr.moreplanetsextras" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "MorePlanetsExtras"
 
 minecraft {
-    version = "1.12.2-14.23.1.2566"
+    version = "1.12.2-14.23.5.2768"
     runDir = "run"
 	mappings = "snapshot_20171003"
 	makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
@@ -23,24 +25,11 @@ minecraft {
 
 dependencies {
 	compile files (
-		"Galacticraft-API-1.12.2-dev.jar",
-		"GalacticraftCore-Dev-1.12.2-4.0.1.0.jar",
-		"Galacticraft-Planets-Dev-1.12.2-4.0.1.0.jar",
-		"MicdoodleCore-Dev-1.12.2-4.0.1.0.jar"
+		"Galacticraft-API-${version_galacticraft}.jar",
+		"GalacticraftCore-Dev-${version_galacticraft}.jar",
+		"Galacticraft-Planets-Dev-${version_galacticraft}.jar",
+		"MicdoodleCore-Dev-${version_galacticraft}.jar"
 	)
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
 }
 
 processResources
